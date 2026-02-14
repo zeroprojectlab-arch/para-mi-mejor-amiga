@@ -207,10 +207,10 @@ function drawBgHearts() {
         bgCtx.beginPath();
         
         // Dibujo del corazón pequeño
-        let s = h.size;
-        bgCtx.moveTo(h.x, h.y);
-        bgCtx.bezierCurveTo(h.x + s, h.y - s, h.x + s*2, h.y + s/3, h.x, h.y + s);
-        bgCtx.bezierCurveTo(h.x - s*2, h.y + s/3, h.x - s, h.y - s, h.x, h.y);
+       let s = h.size;
+            // Esto dibuja el círculo (estrella)
+            bgCtx.arc(h.x, h.y, s / 2, 0, Math.PI * 2);
+            bgCtx.fill();
         bgCtx.fill();
 
         // Si se sale de la pantalla, lo quitamos para que no trabe la PC
